@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      /* html * { font-family:  "Roboto", sans-serif     }  */
+      html * {
+        user-select: none;
+      }
+      /* span[style*="vertical-align:super"]{
+      font-size: 14px !important;
+    }  */
+      /* html * {
+        font-family: "Montserrat";
+        font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif
+      } */
+      span[style*="vertical-align:super"] {
+        font-size: 14px !important;
+      }
+      .grecaptcha-badge{
+        display: none !important;
+      }
+      @media screen and (max-width: 425px) {
+        #chat {
+          margin-top: -10px !important;
+        }
+        iframe {
+          width: 420px !important;
+          min-height: 580px !important;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        #chat {
+          margin-top: -10px !important;
+        }
+        iframe {
+          width: 375px !important;
+          min-height: 560px !important;
+        }
+      }
+      @media screen and (max-width: 320px) {
+        #chat {
+          margin-top: -10px !important;
+        }
+        iframe {
+          /* margin-top: -15px !important; */
+          width: 320px !important;
+          min-height: 550px !important;
+        }
+      }
+
+      /* @media screen  and (orientation: landscape) {
+        #sv-active-video {
+          margin-top: 0 !important;
+          height: 56% !important;
+        }
+      } */
+
+      /* @media screen and (max-width:425px){
+  #video-onesaz{
+    width: 420px !important;
+    height: 300px !important;
+    position: relative !important;
+  }
+  #chat{
+    width: 420px !important;
+    height: 239px !important;
+    margin-top: 15px;
+}
+#iframe-container{
+  padding: 1% 0 0 0 !important;
+   width: 900px !important
+ }
+}
+
+@media screen and (max-width:375px){
+  #video-onesaz{
+    width: 375px !important;
+    width: 270px !important;
+    position: relative !important;
+  }
+
+  #chat{
+    
+    width: 375px !important
+}
+#iframe-container{
+   width: 750px !important;
+   padding: 1% 0 0 0 !important;
+ }
+}
+@media screen and (max-width:320px){
+  #video-onesaz{
+    width: 375px !important;
+    width: 270px !important;
+    position: relative !important;
+  }
+  
+  #chat{
+    width: 320px !important
+}
+ #iframe-container{
+   width: 750px !important;
+   padding: 1% 0 0 0 !important;
+   
+ }
+} */
+
+      /* .chat-scrollbar, .participant-scrollbar{
+      height: calc(100%-40%) !important;
+    } */
+      .chat-input {
+        margin-top: -90px !important;
+      }
+      .chat-participant-header {
+        visibility: hidden !important;
+      }
+      .r-header-row zm-row {
+        visibility: hidden !important;
+      }
+      .suspension-header {
+        top: 10px !important;
+      }
+      .footer-button__button-label {
+        color: #fafafa !important;
+        opacity: 0.5 !important;
+      }
+      button[aria-label="open invite dialog"] {
+        visibility: hidden !important;
+      }
+      .suspension-no-drag {
+        visibility: hidden !important;
+      }
+      .sc-bXGyLb.ilwolc.sc-bxivhb.bJGdRN {
+        visibility: hidden !important;
+      }
+      button.sc-iAyFgw {
+        visibility: hidden !important;
+      }
+      #sv-active-video {
+        margin-top: 50px;
+        height: 650px;
+        opacity: 1;
+        width: 425px;
+      }
+      .active-main {
+        height: 650px !important;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="description" content="Onesaz E-learning" />
+    <link
+      rel="shortcut icon"
+      sizes="76x76"
+      href="%PUBLIC_URL%/faviconone.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <meta
+      name="google-site-verification"
+      content="J75XTtwYb2KQccvTs7MRf-Aec7yzT8PAjDQscIqnqbs"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+
+    <!--     Fonts and icons     -->
+
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.16.0/css/react-select.css" />
+</head>
+    <!-- test -->
+    <!-- <script id="bolt" src="https://sboxcheckout-static.citruspay.com/bolt/run/bolt.min.js"
+   bolt-color="#53AC8F" bolt-logo="https://onesaz.com/static/media/onesaz.c46441cf.png" async="false"> </script> -->
+    <!-- prod -->
+    <script
+      id="bolt"
+      src="https://checkout-static.citruspay.com/bolt/run/bolt.min.js"
+      bolt-color="#53AC8F"
+      bolt-logo="https://onesaz.com/static/media/onesaz.c46441cf.png"
+      asycn="false"
+    ></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!-- <script>
+       MathJax = {
+         chtml:{
+          mathmlSpacing: true
+         },
+            options: { 
+              ignoreHtmlClass: 'tex2jax_ignore',  
+              renderActions: {  
+            addTeX: [151, (doc) => {for (const math of doc.math) MathJax.config.addTeX(math, doc)},
+              (math, doc) => MathJax.config.addTeX(math, doc)
+            ]
+          }
+                
+              },
+              addTeX(math, doc) {
+                // console.log("Adding tex");
+                doc.adaptor.setAttribute(math.typesetRoot, 'onesaz-tex', math.math);
+              },
+       "fast-preview": {disabled: true},
+        tex: {
+          inlineMath: [["$","$"],["\\{","\\}"]],
+          displayMath: [["$","$"],["$","$"],["\\[","\\]"]],
+         }
+          
+        
+      }
+      
+      window.MathJax = MathJax;</script> -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+       "fast-preview": {disabled: true},
+        tex2jax: {
+          inlineMath: [["$","$"],["\\{","\\}"]],
+          displayMath: [["$","$"],["$$","$$"],["\\[","\\]"]],
+          preview: "none"}
+
+      })
+    </script>
+    <!--    
+    <script type="text/javascript" id="MathJax-script" async
+ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  -->
+    <!-- 
+<script id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/es5/tex-chtml.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+      async
+    ></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <style>
+      mjx-container[jax="CHTML"][display="true"] {
+        display: unset !important;
+        text-align: unset !important;
+        margin: 1em 0;
+      }
+      .MJXc-display {
+        display: inline !important;
+      }
+      mjx-container[jax="SVG"][display="true"] {
+        display: inline !important;
+      }
+      mjx-container mjx-utext {
+        font-family: "Roboto sans-serif";
+      }
+      mjx-container svg text[data-variant="sans-serif"] {
+        font-family: "sans-serif";
+      }
+
+      .mjx-math {
+        padding: 10px;
+      }
+      img {
+        vertical-align: middle;
+        background: "unset";
+        /* background: white; */
+      }
+      #normal-editor > * > .jodit_workplace {
+        height: 60vh !important;
+      } /*
+      #normal-editor > .jodit_container{
+         position: fixed;
+       } */
+
+      span[style*="vertical-align"] {
+        font-size: 14px !important;
+        margin-left: -3px;
+      }
+      span[style*="vertical-align"][class*="mjx-"] {
+        font-size: inherit;
+        margin-left: inherit;
+      }
+    </style>
+    <title>Onesaz</title>
+  </head>
+  <body>
+    <noscript>
+      Welcome to onesaz, (enable JavaScript to run this app)
+    </noscript>
+    <div id="root"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- <script src="https://source.zoom.us/zoom-meeting-2.6.0.min.js"></script> -->
+
+    <!-- <script src="https://source.zoom.us/1.7.7/lib/vendor/jquery.min.js"></script>
+    <script src="https://source.zoom.us/1.7.7/lib/vendor/lodash.min.js"></script> -->
+
+    <script>
+      // $('html, body').css({
+      //     // 'overflow-y': 'auto',
+      //     height: 'auto'
+      // });
+      $(".chat-participant-header").text("Ask Questions");
+      $(".chat-participant-header").css({
+        visibility: "hidden",
+      });
+
+      // $('.chat-participant-header').html($('.chat-participant-header').html().replace('Zoom Group Chat','Ask Questions'))
+    </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // var firebaseConfig = {
+      //   apiKey: "AIzaSyCgQ-lngSjwbSoQbTCCkN408IjEGHoZ1J4",
+      //   authDomain: "onesaz.firebaseapp.com",
+      //   databaseURL: "https://onesaz.firebaseio.com",
+      //   projectId: "onesaz",
+      //   storageBucket: "onesaz.appspot.com",
+      //   messagingSenderId: "280032298662",
+      //   appId: "1:280032298662:web:df32acf3dd01c7eef99667",
+      //   measurementId: "G-BN5MTZDBXD",
+      // };
+      var firebaseConfig = {
+        apiKey: "AIzaSyBP_FoiaKYUA2KEklZkxr19at5rfxDala4",
+        authDomain: "onesaz-latest.firebaseapp.com",
+        projectId: "onesaz-latest",
+        storageBucket: "onesaz-latest.appspot.com",
+        messagingSenderId: "585863183408",
+        appId: "1:585863183408:web:ca6a1b3be2e20b772881f5",
+        measurementId: "G-JTDWRPF9CK",
+      };
+      // Initialize Firebase
+      // window.firebase = firebase;
+      window.firebase.initializeApp(firebaseConfig);
+
+      // console.log(new firebase.auth);
+      window.firebase.analytics();
+      window.onesaz_zoom = document.getElementById("zoommtg-root");
+    </script>
+    <!-- Begin of Chaport Live Chat code -->
+    <!-- <script type="text/javascript">
+  (function(w,d,v3){
+  w.chaportConfig = {
+  appId : '5e31ba5c5f8df43f7e5e4de3'
+  };
+  
+  if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+  </script> -->
+    <!-- End of Chaport Live Chat code -->
+
+    <div id="zmmtg-root" style="display: none;"></div>
+    <div id="aria-notify-area"></div>
+  </body>
+</html>
